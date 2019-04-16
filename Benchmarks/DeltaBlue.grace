@@ -367,20 +367,20 @@ method plannerProjectionTest(n: Number) -> Done {
     newScaleConstraint(src, scale, offset, dst, SymRequired, planner)
   }
 
-  planner.changeVar(src)newValue(17)
+  planner.changeVar(src)newValue(17.asInteger)
   (dst.value != 1170).ifTrue { error("Projection test 1 failed!!") }
 
-  planner.changeVar(dst)newValue(1050)
+  planner.changeVar(dst)newValue(1050.asInteger)
   (src.value != 5).ifTrue { error("Projection test 2 failed!!") }
 
-  planner.changeVar(scale)newValue(5)
+  planner.changeVar(scale)newValue(5.asInteger)
   1.asInteger.to(n - 1.asInteger)do { i: Number ->
     (dests.at(i).value != ((i * 5) + 1000).asInteger).ifTrue {
       error("Projection test 3 failed!!")
     }
   }
 
-  planner.changeVar(offset)newValue(2000)
+  planner.changeVar(offset)newValue(2000.asInteger)
   1.asInteger.to(n - 1.asInteger)do{ i: Number ->
     (dests.at(i).value != ((i * 5) + 2000).asInteger).ifTrue {
       error("Projection test 4 failed!!")

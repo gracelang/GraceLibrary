@@ -46,7 +46,7 @@ class newRecord(ptrComp': Record, discr': Number, enumComp': Number, intComp': N
 }
 
 method newRecord -> Record {
-    newRecord(done, 0, 0, 0, "")
+    newRecord(done, 0.asInteger, 0.asInteger, 0.asInteger, "")
 }
 
 var intGlob: Number := 0.asInteger
