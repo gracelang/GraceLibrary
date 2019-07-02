@@ -86,6 +86,7 @@ class newGraphSearch -> harness.Benchmark {
     }
 
     (cost.size == ExpectedNoOfNodes).ifTrue { return totalCost == ExpectedTotalCost }
+    (cost.size == 30000).ifTrue { return totalCost == 184338 } // innerIterations==10
     (cost.size == 60000).ifTrue { return totalCost == 392786 } // innerIterations==20
     (cost.size == 120000).ifTrue { return totalCost == 862279 } // innerIterations==40
 
